@@ -1,0 +1,75 @@
+
+<div>
+  <h2>Post List</h2>
+</div>
+<div>
+  
+  <div class="panel-body" > 
+    <form  class="form-horizontal" role="form" [formGroup]="EnterData" (ngSubmit)="onSubmit(PostId, PostCount, PostTitle, PostBody )">
+        <div class="form-group">
+            <label for="postId" class="col-md-3 control-label">Post ID</label>
+            <div class="col-md-9">
+                <input type="text" #PostId class="form-control" formControlName="PostId" placeholder="Post Id">
+            </div>
+            <div *ngIf="submitted && f.userId.errors">
+              <div *ngIf="f.userId.errors.required">Please enter User Id</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="postCount"  class="col-md-3 control-label">Post Count</label>
+            <div class="col-md-9">
+                <input type="text" #PostCount class="form-control" formControlName="PostCount" placeholder="Post Count">
+            </div>
+            <div *ngIf="submitted && f.password.errors">
+              <div *ngIf="f.password.errors.required">Plese type first name</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="postTitle"  class="col-md-3 control-label">Post Title</label>
+            <div class="col-md-9">
+                <input type="text" #PostTitle class="form-control" formControlName="PostTitle" placeholder="Post Title">
+            </div>
+            <div *ngIf="submitted && f.password.errors">
+              <div *ngIf="f.password.errors.required">Plese type first name</div>
+            </div>
+      </div>
+
+      <div class="form-group">
+        <label for="postTitle"  class="col-md-3 control-label">Post Body</label>
+        <div class="col-md-9">
+            <input type="text" #PostBody class="form-control" formControlName="PostBody" placeholder="Post Body">
+        </div>
+        <div *ngIf="submitted && f.password.errors">
+          <div *ngIf="f.password.errors.required">Plese type first name</div>
+        </div>
+    </div>
+
+      <div class="form-group">
+        <!-- Button -->                                        
+        <div class="col-md-offset-3 col-md-9">
+          <button>Save</button><br>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<!-- <div>
+  <table>
+    <tr>
+      <th>User id</th>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Body</th>
+    </tr>
+    <tr *ngFor="let item of data;">
+      <td><a routerLink="../DataPost/{{item.Id1}}">{{item.Id1}}</a></td>
+      <td>{{item.Id2}}</td>
+      <td>{{item.TitleName}}</td>
+      <td>{{item.BodyContent}}</td>
+    </tr>
+  </table>  
+</div> -->

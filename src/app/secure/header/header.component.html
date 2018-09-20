@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>Home Page</title>
+</head>
+<body>
+  <div>
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" routerLink="home-page">First Project</a>
+            </div>
+            <ul class="nav navbar-nav">{{selection}}
+              <li [ngClass]="selection == 'home' ? 'active' : ''" ><a [ngClass]="selection == 'home' ? 'active' : ''" (click) = "selection = 'home';" [routerLink]="['home']">Home</a></li>
+              <li [ngClass]="selection == 'Suggestions' ? 'active' : ''"><a [ngClass]="selection == 'Suggestions' ? 'active' : ''" (click) = "selection = 'Suggestions';" [routerLink]="['./Suggestions']">List</a></li>
+              <li><a routerLink="DataPost">Post</a></li>
+              <li><a routerLink="PhotoAlbum">Photo Album</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a routerLink="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              </ul>
+          </div>
+          
+        </nav>
+  </div>
+    
+</body>
+</html>
